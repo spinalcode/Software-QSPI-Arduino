@@ -241,10 +241,11 @@ void setup() {
   Serial.println("Init RAM...");  
   initRAM();
 
-  uint8_t myArray[]={0,0,0,0,0,0,0,0};
-  uint8_t myArray2[]={0,0,0,0,0,0,0,0};
+  int howMany = 40;
+  uint8_t myArray[howMany];
+  uint8_t myArray2[howMany];
   Serial.println("Filling array with dummy data...");
-  for(int t=0; t<8; t++){
+  for(int t=0; t<howMany; t++){
     myArray[t] = random(255);
     Serial.print(myArray[t]);
     Serial.print(",");
@@ -257,17 +258,17 @@ void setup() {
   setProtocol(QUADMODE);
   
   Serial.print("Sending - ");
-  for(int t=0; t<8; t++){
+  for(int t=0; t<howMany; t++){
     Serial.print(myArray[t]);
     Serial.print(",");
   }
  
   Serial.println("");
-  writeToAddressQuad(0, &myArray[0], 8);
-  readFromAddressQuad(0, myArray2, 8);
+  writeToAddressQuad(0, &myArray[0], howMany);
+  readFromAddressQuad(0, myArray2, howMany);
 
   Serial.print("Reading - ");
-  for(int t=0; t<8; t++){
+  for(int t=0; t<howMany; t++){
     Serial.print(myArray2[t]);
     Serial.print(",");
   }
