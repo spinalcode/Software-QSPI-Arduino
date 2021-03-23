@@ -1,10 +1,10 @@
 
-#define SIO0 4  // MOSI in SPI mode
-#define SIO1 5  // MISO in SPI mode
-#define SIO2 9  // Needs to be HIGH in SPI mode
-#define SIO3 10 // Needs to be HIGH in SPI mode
-#define CLOCK 0
-#define CS 12
+#define SIO0 4  // RAM Pin 5  // MOSI in SPI mode
+#define SIO1 5  // RAM Pin 2  // MISO in SPI mode
+#define SIO2 9  // RAM Pin 3  // Needs to be HIGH in SPI mode
+#define SIO3 10 // RAM Pin 7  // Needs to be HIGH in SPI mode
+#define CLOCK 0 // RAM Pin 6
+#define CS 12   // RAM Pin 1
 
 #define BYTEMODE 0
 #define SEQMODE  0x40
